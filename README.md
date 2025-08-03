@@ -72,8 +72,8 @@ terraform apply
 ssh -i "your_key.pem" ubuntu@<JENKINS_PUBLIC_IP>
 ```
 4. Configure kubectl on Jenkins:
-   ``` bash
-   aws eks update-kubeconfig --region <YOUR_AWS_REGION> --name <YOUR_EKS_CLUSTER_NAME>```
+``` bash
+aws eks update-kubeconfig --region <YOUR_AWS_REGION> --name <YOUR_EKS_CLUSTER_NAME>```
 
 ## 4️⃣ Phase 2: Jenkins Configuration
 #🔗 Access Jenkins:
