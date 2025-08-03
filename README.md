@@ -53,18 +53,21 @@ You will need:
 
 ## 3️⃣ Phase 1: Infrastructure Setup with Terraform
 
-1. Clone this repository and go to the `terraform/` directory:
-   ```bash
-   cd terraform/
+This phase provisions all the necessary AWS resources for the project.
 
-2. Initialize and apply the infrastructure:
+1. Clone the project repository to your local machine.
+
+2. Navigate to your Terraform directory.
+
+3. Run the following commands to provision the infrastructure:
+
   ```bash
 terraform init
 terraform plan
 terraform apply
 
 ```
-3. SSH into the Jenkins EC2 instance:
+4. SSH into the Jenkins EC2 instance:
   ``` CMD
 ssh -i "your_key.pem" ubuntu@<JENKINS_PUBLIC_IP>
 ```
@@ -75,47 +78,43 @@ ssh -i "your_key.pem" ubuntu@<JENKINS_PUBLIC_IP>
 ## 4️⃣ Phase 2: Jenkins Configuration
 #🔗 Access Jenkins:
 
-Open your browser:
-http://<JENKINS_PUBLIC_IP>:8080
+1. Access Jenkins: Open your web browser and navigate to http://<JENKINS_PUBLIC_IP>:8080.
 
-🔌 Install Plugins:
-Go to Manage Jenkins > Manage Plugins and install:
+2. Install Plugins: Install the following plugins via Manage Jenkins > Manage Plugins:
 
-    GitHub Integration
+   GitHub Integration
 
-    Docker
+   Docker
 
-    Pipeline: Stage View
+   Pipeline: Stage View
 
-🔐 Add DockerHub Credentials:
-1. Go to: Manage Jenkins > Credentials > Global > Add Credentials
+3. Add DockerHub Credentials:
 
-2. Set:
+   Go to Manage Jenkins > Manage Credentials.
 
-    Kind: Username with password
+   Click Global credentials (unrestricted).
 
-    ID: dockerhub_credentials (must match Jenkinsfile)
+   Click Add Credentials.
 
-    Username: your DockerHub username
+   Kind: Username with password
 
-    Password: your DockerHub password
-   
-🧪 Create a Jenkins Pipeline Job:
+   ID: dockerhub_credentials (This ID is crucial).
 
-    Go to New Item → Pipeline
+   Enter your DockerHub username and password.
 
-    Name: Trend-App-CI-CD
+4.Create a Jenkins Pipeline Job:
 
-    Under Build Triggers: check ✅ GitHub hook trigger for GITScm polling
+   Click New Item and select Pipeline.
 
-    Under Pipeline:
+   Name it Trend-App-CI-CD.
 
-        Definition: Pipeline script from SCM
+   Under "Build Triggers," check GitHub hook trigger for GITScm polling.
 
-        SCM: Git
+   Under "Pipeline," set "Definition" to Pipeline script from SCM.
 
-        Repo URL: https://github.com/PranuthHM/React_Application_Deployment_Document_2_Trend.git
-Branch Specifier: */main
+   Set "SCM" to Git.
+
+   Enter your GitHub repository URL and set the "Branch Specifier" to */main.
 
 
 ## 5️⃣ Phase 3: CI/CD Pipeline and Manifests
