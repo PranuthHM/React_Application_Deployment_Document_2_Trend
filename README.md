@@ -44,9 +44,9 @@ You will need:
 - ✅ **DockerHub Account**
 - ✅ Installed tools:
   - [Terraform](https://developer.hashicorp.com/terraform/downloads)
-  - [eksctl](https://eksctl.io/) → `brew install eksctl`
-  - [aws-cli](https://aws.amazon.com/cli/) → `brew install awscli`
-  - [kubectl](https://kubernetes.io/docs/tasks/tools/) → `brew install kubectl`
+  - [eksctl](https://eksctl.io/) → ` install eksctl`
+  - [aws-cli](https://aws.amazon.com/cli/) → ` install awscli`
+  - [kubectl](https://kubernetes.io/docs/tasks/tools/) → ` install kubectl`
   - [Docker](https://www.docker.com/)
 
 ---
