@@ -216,8 +216,10 @@ spec:
 
 ## 6️⃣ Phase 4: Monitoring with Prometheus and Grafana
 🧰 Install Helm on Jenkins:
-curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-
+curl 
+```
+https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+```
 📈 Deploy Monitoring Stack:
 
 ```
@@ -238,41 +240,44 @@ kubectl get services -n monitoring
 Open the EXTERNAL-IP of the prometheus-grafana service in browser.
 
 Username: admin
-
 Password: prom-operator
 
 ## 7️⃣ Usage and Triggering a Build
-To trigger a pipeline:
+   To trigger a pipeline:
 
-    Make a change in your application code.
+   Make a change in your application code.
 
-    Push changes:
+   Push changes:
+   ```
     git add .
     git commit -m "Update app"
     git push origin main
+```
 
   Jenkins will:
 
-    Pull the latest code
+   Pull the latest code
 
-    Build Docker image
+   Build Docker image
 
-    Push it to DockerHub
+   Push it to DockerHub
 
-    Deploy to Kubernetes via EKS
+   Deploy to Kubernetes via EKS
 
 ## 8️⃣ Cleanup
 To avoid AWS billing, destroy all created infrastructure.
 🧹 Delete Kubernetes Resources:
+```bash
 kubectl delete -f deployment.yaml
 kubectl delete -f service.yaml
 helm uninstall prometheus --namespace monitoring
 kubectl delete namespace monitoring
+```
 
 🧨 Destroy Terraform Resources:
 
 From your local machine:
-
+``` CMD
 cd terraform/
 terraform destroy
-
+```
