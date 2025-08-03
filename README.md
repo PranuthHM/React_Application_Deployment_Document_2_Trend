@@ -403,7 +403,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ## 8️⃣ Step 6: Kubernetes Setup (AWS EKS)
 
 1. Create cluster.yaml on your Jenkins server: Find the VPC and subnet IDs in the AWS Console.
-2. 
+
 ``` YAML
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
