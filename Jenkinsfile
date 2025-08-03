@@ -42,13 +42,15 @@ pipeline {
             }
         }
 
-       // ... (rest of the pipeline remains the same)
+    
+
+
 
         stage('Deploy to Kubernetes') {
             steps {
                 sh """
                     # Configure kubectl to use the kubeconfig file on the Jenkins server
-                    export KUBECONFIG=/home/ubuntu/.kube/config
+                    export KUBECONFIG=/var/lib/jenkins/.kube/config
 
                     # Apply the Kubernetes Deployment and Service manifests
                     echo "Applying Kubernetes Deployment..."
