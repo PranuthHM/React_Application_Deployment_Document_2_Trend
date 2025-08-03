@@ -1,12 +1,10 @@
 pipeline {
     agent any
     environment {
-        // Replace with your DockerHub repository name
         DOCKER_IMAGE = "pranuthhm/trend-react-app"
-        // The credentials ID for DockerHub stored in Jenkins
         DOCKERHUB_CREDENTIALS = "dockerhub_credentials"
-        // Get Kubeconfig path. This is what was created by `aws eks update-kubeconfig`
-        KUBECONFIG_PATH = "/home/ubuntu/.kube/config"
+        // Update the path to the new location
+        KUBECONFIG_PATH = "/var/lib/jenkins/.kube/config" 
     }
     stages {
         stage('Git Checkout') {
