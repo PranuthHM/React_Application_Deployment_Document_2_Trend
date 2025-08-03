@@ -72,7 +72,7 @@ ssh -i "your_key.pem" ubuntu@<JENKINS_PUBLIC_IP>
    ``` bash
    aws eks update-kubeconfig --region <YOUR_AWS_REGION> --name <YOUR_EKS_CLUSTER_NAME>```
 
-##4️⃣ Phase 2: Jenkins Configuration
+## 4️⃣ Phase 2: Jenkins Configuration
 #🔗 Access Jenkins:
 
 Open your browser:
