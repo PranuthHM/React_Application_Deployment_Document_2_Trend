@@ -118,7 +118,7 @@ Go to Manage Jenkins > Manage Plugins and install:
 Branch Specifier: */main
 
 
-##5️⃣ Phase 3: CI/CD Pipeline and Manifests
+## 5️⃣ Phase 3: CI/CD Pipeline and Manifests
 
 Ensure the following files exist at the root of your GitHub repo:
 
@@ -214,7 +214,7 @@ spec:
     targetPort: 3000
 ```
 
-##6️⃣ Phase 4: Monitoring with Prometheus and Grafana
+## 6️⃣ Phase 4: Monitoring with Prometheus and Grafana
 🧰 Install Helm on Jenkins:
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
@@ -241,7 +241,7 @@ Username: admin
 
 Password: prom-operator
 
-##7️⃣ Usage and Triggering a Build
+## 7️⃣ Usage and Triggering a Build
 To trigger a pipeline:
 
     Make a change in your application code.
@@ -261,7 +261,7 @@ To trigger a pipeline:
 
     Deploy to Kubernetes via EKS
 
-##8️⃣ Cleanup
+## 8️⃣ Cleanup
 To avoid AWS billing, destroy all created infrastructure.
 🧹 Delete Kubernetes Resources:
 kubectl delete -f deployment.yaml
